@@ -8,5 +8,6 @@ use App\Domain\Products\Entities\Alert;
 
 interface AlertRepositoryInterface
 {
+    public function findByProductId(int $productId): ?Alert;
     public function updateAlert(Alert $alert): void;
 }

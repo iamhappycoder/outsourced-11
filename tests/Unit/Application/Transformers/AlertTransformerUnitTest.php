@@ -11,10 +11,10 @@ class AlertTransformerUnitTest extends TestCase
 {
     public function testFromUpdateAlertDTOSuccess(): void
     {
-        $alert = AlertTransformer::fromUpdateAlertDTO(UpdateAlertDTOMother::createObject(1, 2));
+        $alert = AlertTransformer::fromUpdateAlertDTO(UpdateAlertDTOMother::getSingle());
 
         $this->assertInstanceOf(Alert::class, $alert);
         $this->assertSame(1, $alert->productId);
-        $this->assertSame(2, $alert->level);
+        $this->assertSame(101, $alert->level);
     }
 }

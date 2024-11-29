@@ -7,6 +7,10 @@ namespace App\Domain\Products;
 
 use App\Domain\Products\Repositories\AlertRepositoryInterface;
 use App\Domain\Products\Repositories\ProductRepositoryInterface;
+use App\Domain\Products\Services\CreateProductServiceInterface;
+use App\Domain\Products\Services\CreateProductsService;
+use App\Domain\Products\Services\UpdateAlertService;
+use App\Domain\Products\Services\UpdateAlertServiceInterface;
 use App\Infrastructure\External\ShopWired\UpdateStock;
 use App\Infrastructure\External\ShopWired\UpdateStockInterface;
 use App\Infrastructure\Repositories\Products\AlertRepository;
@@ -27,6 +31,8 @@ final class ProductsProvider extends ServiceProvider
         //
         // Services
         //
+        CreateProductServiceInterface::class => CreateProductsService::class,
+        UpdateAlertServiceInterface::class => UpdateAlertService::class,
 
         //
         // Repositories

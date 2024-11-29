@@ -12,4 +12,9 @@ readonly class UpdateAlertDTOMother
     ): UpdateAlertDTO {
         return new UpdateAlertDTO($productId, $level);
     }
+
+    public static function getSingle(): UpdateAlertDTO
+    {
+        return self::createObject(1, 101);
+    }
 }

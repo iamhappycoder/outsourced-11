@@ -19,4 +19,9 @@ readonly class AlertMother
     ): Alert {
         return new Alert($productId, $level);
     }
+
+    public static function getSingle(): Alert
+    {
+        return self::createObject(1, 101);
+    }
 }
